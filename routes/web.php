@@ -5,7 +5,7 @@ use App\Http\Controllers\Login\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route('home');
 });
 
 Route::controller(AuthController::class)->group(function () {
@@ -28,4 +28,5 @@ Route::controller(AuthController::class)->group(function () {
 
     // Logout
     Route::post('/logout', 'logout')->name('logout');
+    Route::get('/home', 'showhome')->name('home');
 });;
